@@ -8,7 +8,7 @@ FULL_DATE=$(date '+%F')
 
 # Validate parameter is a directory
 if [[ -d $1 ]]; then
-  echo "Backing up /home ..."
+  sudo echo "Backing up /home ..."
 else
   echo "$1 is not a valid directory"
   exit 1
@@ -21,6 +21,6 @@ sudo tar -czvf - \
       -X ~/backup_exclude.txt \
       -g "$1"/"$YEAR"-"$MONTH"-metadata.snar \
       /home \
-| gpg -c \
+| gpg -se -r "aidlo.dev@pm.me" \
       -z 0 --cipher-algo aes256 \
       -o "$1"/"$FULL_DATE".tgz.gpg

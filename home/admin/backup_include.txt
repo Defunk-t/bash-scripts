@@ -1,0 +1,12 @@
+/home/aidan/.config/BraveSoftware
+/home/aidan/.gnupg
+/home/aidan/.ssh
+/home/aidan/documents
+/home/aidan/downloads
+/home/aidan/Music
+/home/aidan/pictures
+/home/aidan/repos
+/home/aidan/software
+/home/dev
+/home/mpc
+/home/nrglab

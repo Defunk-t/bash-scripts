@@ -1,0 +1,12 @@
+[user]
+	name = Aidan Loughran
+	email = aidlo.dev@pm.me
+	signingKey = 5FB88D79DCB9EEAC
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
+[safe]
+	directory = *
+[commit]
+	gpgsign = true

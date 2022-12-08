@@ -28,12 +28,12 @@ sudo tar -czvf - \
       -T ~/backup_include.txt \
       -g "$SNAR" \
 | gpg -se -r $GPG_USER \
-      -z 0 --cipher-algo aes256 \
+      --cipher-algo aes256 \
       -o "$1/$FULL_DATE.tgz.gpg"
 
 # Encrypt snapshot data
 gpg -se -r $GPG_USER \
-    -z 0 --cipher-algo aes256 \
+    --cipher-algo aes256 \
     -o "$SNAR.gpg" \
        "$SNAR" \
 && rm "$SNAR"

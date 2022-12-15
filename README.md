@@ -14,6 +14,8 @@ This repo is structured like a full file system rather than a traditional dotfil
 
   It also contains [scripts](home/admin/scripts/).
 
+  Aliases are defined to bind `pw-get` and `pw-mod` commands to scripts for a very simple password manager. (I'll turn this into its own project at some point.)
+
 - ### [`/home/dev/`](home/dev/)
 
   > **Warning**

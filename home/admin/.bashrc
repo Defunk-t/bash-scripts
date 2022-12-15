@@ -2,15 +2,16 @@
 [[ $- != *i* ]] && return
 
 export EDITOR=vim
+export SCRIPT_DIR=~/scripts/
 
 PS1='[\u@\h \W]\$ '
-SCRIPT_DIR=~/scripts/
 GITHUB=git@github.com:aidlran
 
 umask 007
 
 alias ls='ls --color=auto'
 alias pw-get=$SCRIPT_DIR/pw_get.sh
+alias pw-mod=$SCRIPT_DIR/pw_mod.sh
 alias doas='sudo -u'
 
 # "NPM Safe"

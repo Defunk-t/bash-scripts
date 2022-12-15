@@ -10,8 +10,9 @@ GITHUB=git@github.com:aidlran
 umask 007
 
 alias ls='ls --color=auto'
+alias cedit=$SCRIPT_DIR/crypt_edit.sh
 alias pw-get=$SCRIPT_DIR/pw_get.sh
-alias pw-mod=$SCRIPT_DIR/pw_mod.sh
+alias pw-mod=$'$SCRIPT_DIR/crypt_edit.sh --backup ~/documents/pw.old/$(date -r ~/documents/pw.gpg \'+%Y%m%d%H%M%S\').gpg ~/documents/pw.gpg'
 alias doas='sudo -u'
 
 # "NPM Safe"

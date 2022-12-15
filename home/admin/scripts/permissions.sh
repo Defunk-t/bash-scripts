@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Recursively set permissions for a directory
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 NAS_MOUNTPOINT=/mnt/nas
 BACKUP_DIR=$NAS_MOUNTPOINT/backup

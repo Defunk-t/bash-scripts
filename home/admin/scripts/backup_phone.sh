@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Script is ran manually after cd-ing into mounted
 # dir where .SeedVaultAndroidBackup/ can be found

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 FULL_DATE=$(date '+%F')
 

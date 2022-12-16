@@ -4,16 +4,23 @@
 export EDITOR=vim
 export SCRIPT_DIR=~/scripts/
 
+REPOS_DIR=~/repos/
+
+export PATH=$PATH:$SCRIPT_DIR/:$REPOS_DIR/password-manager-cli/
+
 PS1='[\u@\h \W]\$ '
 GITHUB=git@github.com:aidlran
 
 umask 007
 
 alias ls='ls --color=auto'
-alias cedit=$SCRIPT_DIR/crypt_edit.sh
-alias pw-get=$SCRIPT_DIR/pw_get.sh
-alias pw-mod=$'$SCRIPT_DIR/crypt_edit.sh --backup ~/documents/pw.old/$(date -r ~/documents/pw.gpg \'+%Y%m%d%H%M%S\').gpg ~/documents/pw.gpg'
-alias doas='sudo -u'
+
+# Edit GPG files
+alias gpgedit='gpg_edit.sh --gpg-args "-ser aidan"'
+
+# CLI Password Manager
+# See: https://github.com/aidlran/cli-password-manager
+alias pw-mod='pw-mod --gpg-args "-ser aidan"'
 
 # "NPM Safe"
 # Execute NPM commands as dev-node user

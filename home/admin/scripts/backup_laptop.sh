@@ -15,11 +15,6 @@ else
   exit 1
 fi
 
-# Decrypt snapshot data
-if [ -f "$SNAR".gpg ]; then
-  gpg -d "$SNAR".gpg > "$SNAR"
-fi
-
 # Create tar and pipe it through GPG
 # Full backup is made once a month
 # Incremental backups are made throughout the month
@@ -27,13 +22,6 @@ sudo tar -czvf - \
       -X ~/backup_exclude.txt \
       -T ~/backup_include.txt \
       -g "$SNAR" \
-| gpg -se -r $GPG_USER \
+| gpg -ser $GPG_USER \
       --cipher-algo aes256 \
       -o "$1/$FULL_DATE.tgz.gpg"
-
-# Encrypt snapshot data
-gpg -se -r $GPG_USER \
-    --cipher-algo aes256 \
-    -o "$SNAR.gpg" \
-       "$SNAR" \
-&& rm "$SNAR"

@@ -31,6 +31,6 @@ This repo is structured like a full file system rather than a traditional dotfil
 
 ## My Machine
 
-<div align=center><image src=neofetch.jpg alt=Neofetch></div>
+<div align=center><image src=neofetch.png alt=Neofetch></div>
 
 I use a laptop that runs Arch Linux with the XFCE4 desktop environment and I plan to experiment with other window managers, shells, and more when I have some time.

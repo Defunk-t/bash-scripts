@@ -84,7 +84,7 @@ editor_pipe() {
   cat > $TMPFILE
   $EDITOR $TMPFILE < /dev/tty > /dev/tty
   cat $TMPFILE
-  rm $TMPFILE
+  shred -u $TMPFILE
 }
 
 # Decrypt, edit in editor, re-encrypt
@@ -95,5 +95,5 @@ gpg -do - $BACKUP_FILE \
 # Delete old version when we're done
 # with it unless user wanted a backup
 if [ $BACKUP -eq 0 ]; then
-  rm $BACKUP_FILE
+  shred -u $BACKUP_FILE
 fi

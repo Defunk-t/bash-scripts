@@ -15,6 +15,8 @@ umask 007
 
 alias ls='ls --color=auto'
 
+alias sudo='doas'
+
 # Edit GPG files
 alias gpgedit='gpg_edit.sh --gpg-args "-ser aidan"'
 
@@ -24,7 +26,7 @@ alias pw-mod='pw-mod --gpg-args "-ser aidan"'
 
 # "NPM Safe"
 # Execute NPM commands as dev-node user
-alias npms='sudo -u dev-node npm' 
+alias npms='doas -u dev-node npm' 
 
 # Sneaky function that commits with a specific date
 git-commit-date() {

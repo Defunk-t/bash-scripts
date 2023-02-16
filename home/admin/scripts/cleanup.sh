@@ -2,12 +2,12 @@
 
 # Clean the package manager
 #  Uninstall orphans
-sudo aura -Oj
+doas aura -Oj
 #  Clean cache etc.
-sudo aura -Sc
+doas aura -Sc
 
 # Clean Docker
-sudo docker system prune -f
+doas docker system prune -f
 
 # Clean the home directory
 rm ~/.*_history

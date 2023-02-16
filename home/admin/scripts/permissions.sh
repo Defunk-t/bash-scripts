@@ -8,6 +8,6 @@ read -r -p "Set group to: " group
 read -r -p "Set folder permissions to: " dperm
 read -r -p "Set file permissions to: " fperm
 
-sudo chown -R "$owner":"$group" "$folder"
-sudo find "$folder" -type d -exec chmod "$dperm" {} \;
-sudo find "$folder" -type f -exec chmod "$fperm" {} \;
+doas chown -R "$owner":"$group" "$folder"
+doas find "$folder" -type d -exec chmod "$dperm" {} \;
+doas find "$folder" -type f -exec chmod "$fperm" {} \;

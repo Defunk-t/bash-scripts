@@ -1,1 +1,2 @@
-i3
+setxkbmap gb
+exec i3

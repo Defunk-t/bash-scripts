@@ -1,3 +1,4 @@
 * text=auto
 
-.bashrc linguist-language=shell
+.bash*   linguist-language=shell
+.xinitrc linguist-language=shell

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Mount NAS filesystem if not mounted
+NAS_MOUNTPOINT=/mnt/nas
+if ! mountpoint -q $NAS_MOUNTPOINT; then
+  sshfs -C -o follow_symlinks,allow_root server:/mnt/nas/main /mnt/nas
+fi

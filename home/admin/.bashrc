@@ -1,32 +1,25 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Environment variables - available to other programs & scripts
 export EDITOR=vim
-export SCRIPT_DIR=~/scripts/
+export SCRIPT_DIR=~/Scripts
 
-REPOS_DIR=~/repos/
+# Bash variables - available in this Bash session
+PROJECT_DIR=~/Projects
 
-export PATH=$PATH:$SCRIPT_DIR/:$REPOS_DIR/password-manager-cli/
+# Append PATH
+export PATH=$PATH:$SCRIPT_DIR:$PROJECT_DIR/cli-password-manager
 
-PS1='[\u@\h \W]\$ '
-GITHUB=git@github.com:aidlran
-
+# Permissions mask for new files
 umask 007
 
-alias ls='ls --color=auto'
-
-alias sudo='doas'
-
 # Edit GPG files
-alias gpgedit='gpg_edit.sh --gpg-args "-ser aidan"'
+alias gpg-edit='gpg-edit --gpg-args "-esr aidan@loughran.dev"'
 
 # CLI Password Manager
 # See: https://github.com/aidlran/cli-password-manager
-alias pw-mod='pw-mod --gpg-args "-ser aidan"'
-
-# "NPM Safe"
-# Execute NPM commands as dev-node user
-alias npms='doas -u dev-node npm' 
+alias pw-mod='pw-mod --gpg-args "-esr aidan@loughran.dev"'
 
 # Sneaky function that commits with a specific date
 git-commit-date() {

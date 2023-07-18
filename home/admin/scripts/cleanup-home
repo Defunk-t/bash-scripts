@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Clean the home directory
+rm ~/.*_history
+rm -rf ~/.local/share/Trash/*

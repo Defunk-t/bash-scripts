@@ -1,9 +1,0 @@
-[user]
-	name = Aidan Loughran
-	email = 86127892+aidlran@users.noreply.github.com
-[core]
-	editor = vim
-[init]
-	defaultBranch = main
-[safe]
-	directory = *

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+NAS_MOUNTPOINT=/mnt/nas
+BACKUP_DIR=$NAS_MOUNTPOINT/backup
+
+# Ensure NAS filesystem is mounted
+$SCRIPT_DIR/mount-nas
+
+# Run backup scripts
+$SCRIPT_DIR/backup-home $BACKUP_DIR/pc/linux

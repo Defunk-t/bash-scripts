@@ -1,0 +1,12 @@
+{
+  "editor.dragAndDrop": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "files.autoSave": "onFocusChange",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Dracula"
+}

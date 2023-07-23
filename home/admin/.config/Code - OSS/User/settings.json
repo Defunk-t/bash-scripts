@@ -6,10 +6,11 @@
   "editor.fontSize": 16,
   "editor.fontWeight": 600,
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
   "window.restoreWindows": "none",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Dracula"

@@ -70,10 +70,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm, xK_Tab   ), windows W.focusDown)
 
     -- Move focus to the next window
-    , ((modm, xK_j     ), windows W.focusDown)
+    , ((modm, xK_k     ), windows W.focusDown)
 
     -- Move focus to the previous window
-    , ((modm, xK_k     ), windows W.focusUp  )
+    , ((modm, xK_j     ), windows W.focusUp  )
 
     -- Move focus to the master window
     , ((modm, xK_m     ), windows W.focusMaster  )
@@ -296,8 +296,8 @@ help = unlines ["",
     "-- move focus up or down the window stack",
     "Alt       + Tab     | Move focus to the next window",
     "Alt-Shift + Tab     | Move focus to the previous window",
-    "Alt       + J       | Move focus to the next window",
-    "Alt       + K       | Move focus to the previous window",
+    "Alt       + K       | Move focus to the next window",
+    "Alt       + J       | Move focus to the previous window",
     "Alt       + M       | Move focus to the master window",
     "",
     "-- modifying the window order",

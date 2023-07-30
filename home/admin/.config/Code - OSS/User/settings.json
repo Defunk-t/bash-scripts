@@ -12,6 +12,7 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "window.restoreWindows": "none",
+  "window.menuBarVisibility": "toggle",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Dracula"
 }

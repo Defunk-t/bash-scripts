@@ -7,6 +7,6 @@
 $SCRIPT_DIR/mount-nas
 
 # Create tar and pipe it through GPG
-tar -czvf - .SeedVaultAndroidBackup/ | gpg \
-  -se -r "aidan@loughran.dev" -z 0 \
-  -o /mnt/nas/backup/android/aidan/$(date '+%F').tgz.asc
+tar -czvf - .SeedVaultAndroidBackup | gpg \
+  -se -r aidan@loughran.dev -z 0 \
+  -o /mnt/nas/backup/android/aidan/$(date '+%F').tgz.bin

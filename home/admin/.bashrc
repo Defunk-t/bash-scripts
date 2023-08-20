@@ -3,6 +3,7 @@
 
 # Environment variables - available to other programs & scripts
 export EDITOR=vim
+export TERM=alacritty
 export SCRIPT_DIR=~/Scripts
 
 # Bash variables - available in this Bash session

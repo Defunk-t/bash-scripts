@@ -31,3 +31,20 @@ git-commit-date() {
 git-commit-amend() {
   GIT_COMMITTER_DATE="$(git log -1 --format=%cd)" git commit --amend --date "$(git log -1 --format=%cd)" "$@"
 }
+
+##############
+# NPM Secure #
+##############
+
+# To protect from supply chain attacks
+# always run NPM commands as another user
+
+function npms() {
+  # su implementation
+  command su -c "npm ${@:2}" "$1"
+
+  # sudo implementation
+  # command sudo -u "$1" npm "${@:2}"
+}
+
+alias npm='npms npm'

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+setxkbmap gb
+xhost local:aidan
+mount-remotes

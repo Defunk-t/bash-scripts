@@ -36,15 +36,6 @@ git-commit-amend() {
 # NPM Secure #
 ##############
 
-# To protect from supply chain attacks
-# always run NPM commands as another user
-
-function npms() {
-  # su implementation
-  command su -c "npm ${@:2}" "$1"
-
-  # sudo implementation
-  # command sudo -u "$1" npm "${@:2}"
-}
-
-alias npm='npms npm'
+# To protect from supply chain attacks always run NPM commands as another user.
+# My user is granted permission to do this in the sudoers file.
+alias npm='sudo -u npm npm'

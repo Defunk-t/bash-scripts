@@ -51,6 +51,7 @@ bindsym $mod+p       exec --no-startup-id dmenu_run
 bindsym $mod+Shift+p exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+b       exec firefox
 bindsym $mod+c       exec code
+bindsym $mod+Shift+c exec ~/Scripts/user_menu code
 
 bindsym $win+l       exec i3lock
 
@@ -145,7 +146,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+. reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)

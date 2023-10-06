@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+  echo "Usage: user_menu <command> [args]"
+  exit 1
+fi
+
+selected_user=$(getent passwd | awk -F: -v me="$(whoami)" '$3 > 1000 && $3 < 2000 && $1 != me {print $1}' | dmenu -p 'Select a user:' -l 10)
+
+if [ -n "$selected_user" ]; then
+  sudo -u "$selected_user" "$@"
+fi

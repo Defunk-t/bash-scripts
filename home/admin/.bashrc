@@ -39,3 +39,6 @@ git-commit-amend() {
 # To protect from supply chain attacks always run NPM commands as another user.
 # My user is granted permission to do this in the sudoers file.
 alias npm='sudo -u npm npm'
+
+# YT-DLP
+alias yt-dlp='yt-dlp --cookies-from-browser firefox --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0" -o "/mnt/nas/tmp/%(upload_date)s_%(title)s_%(id)s.%(ext)s"'

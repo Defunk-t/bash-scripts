@@ -1,5 +1,1 @@
-/home/aidan/.config/BraveSoftware
-/home/aidan/.mozilla
-/home/aidan/.pwmanager
-/home/aidan/Downloads
-/home/aidan/Projects
+/home

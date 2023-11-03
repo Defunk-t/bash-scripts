@@ -17,7 +17,7 @@ fi
 # Create tar and pipe through GPG
 # Incremental backups are currently disabled
 #     -g "$SNAR" \
-tar -czvf - \
+tar -czvf - --ignore-failed-read \
       -X ~/backup_exclude.txt \
       -T ~/backup_include.txt \
 | gpg -ser aidan@loughran.dev \

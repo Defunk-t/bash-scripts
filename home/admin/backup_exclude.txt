@@ -1,3 +1,8 @@
+/home/aidan/Shared
+.cache
+.npm
+cache/
+Cache/
 Downloads/**.avi
 Downloads/**.mkv
 Downloads/**.mp4

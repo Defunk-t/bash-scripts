@@ -1,14 +1,7 @@
 /home/aidan/Shared
+.angular
 .cache
 .npm
-cache/
-Cache/
-Downloads/**.avi
-Downloads/**.mkv
-Downloads/**.mp4
-Downloads/**.parts
-Downloads/**.run
-Downloads/**.srt
-Downloads/**.webm
-Downloads/**.zip
+cache
+Cache
 node_modules

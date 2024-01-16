@@ -1,0 +1,9 @@
+#!/bin/bash
+
+options=("brave" "chromium" "firefox")
+
+browser=$(printf '%s\n' "${options[@]}" | dmenu -p 'Select a browser:' -l 5)
+
+if [ -n "$browser" ]; then
+  $browser &
+fi

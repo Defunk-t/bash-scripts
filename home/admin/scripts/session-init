@@ -1,5 +1,23 @@
 #!/bin/sh
 
 setxkbmap gb
+
 xhost local:aidan
-mount-remotes
+
+MOUNTPOINT=/mnt/nas
+TARGET=server:/mnt/nas/main
+if ! mountpoint -q $MOUNTPOINT; then
+  sshfs -C -o follow_symlinks,allow_root $TARGET $MOUNTPOINT
+fi
+
+MOUNTPOINT=/mnt/nas2
+TARGET=anon@srv2:/mnt/nas
+if ! mountpoint -q $MOUNTPOINT; then
+  sshfs -C -o follow_symlinks,allow_root $TARGET $MOUNTPOINT
+fi
+
+MOUNTPOINT=~/Shared
+TARGET=anon@srv2:/mnt/nas/Anon
+if ! mountpoint -q $MOUNTPOINT; then
+  sshfs -C -o follow_symlinks $TARGET $MOUNTPOINT
+fi

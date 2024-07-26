@@ -1,27 +1,26 @@
 #!/bin/sh
 
-YEAR=$(date '+%Y')
-MONTH=$(date '+%m')
-FULL_DATE=$(date '+%F')
+OUTPUT_PATH="Backups/$(date '+%F')\ PC\ Artix.txz.gpg"
+FULL_PATH="/mnt/nas/$OUTPUT_PATH"
 
-# SNAR="$1"/"$YEAR"-"$MONTH".snar
-
-# Validate parameter is a directory
-if [[ -d $1 ]]; then
-  echo "Backing up /home ..."
-else
-  echo "$1 is not a valid directory"
-  exit 1
-fi
-
-# Create tar and pipe through GPG
-# Incremental backups are currently disabled
-#     -g "$SNAR" \
-tar -czvf - --ignore-failed-read \
+# Create encrypted, compressed tar and save to remote
+  tar cvf - \
+      --ignore-failed-read \
       -X ~/backup_exclude.txt \
-      -T ~/backup_include.txt \
-| gpg -ser aidan@loughran.dev \
-      --cipher-algo AES256 \
-      -o "$1/$FULL_DATE.tgz.bin"
+      --exclude /home/aidan/Shared \
+      --exclude .angular \
+      --exclude .cache \
+      --exclude .cargo \
+      --exclude .electron-gyp \
+      --exclude .gradle \
+      --exclude .npm \
+      --exclude cache \
+      --exclude Cache \
+      --exlude node_modules \
+      /home \
+| xz  -9 -T0 \
+| gpg -er aidan -z0 -o - \
+| ssh anon@srv2 "cat > $FULL_PATH"
 
-# TODO: check output file exists, ask to overwrite or abort
+# Request the server then pushes the file to cloud
+ssh -t admin@srv2 "sudo rclone -P copyto --config=/root/.config/rclone/rclone.conf $FULL_PATH proton:$OUTPUT_PATH"

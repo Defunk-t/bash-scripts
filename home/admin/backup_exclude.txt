@@ -1,7 +1,0 @@
-/home/aidan/Shared
-.angular
-.cache
-.npm
-cache
-Cache
-node_modules

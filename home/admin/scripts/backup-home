@@ -19,7 +19,7 @@ FULL_PATH="/mnt/nas/$OUTPUT_PATH"
       --exlude node_modules \
       /home \
 | xz  -9 -T0 \
-| gpg -er aidan -z0 -o - \
+| gpg -er D3C4963B -z0 -o - \
 | ssh anon@srv2 "cat > $FULL_PATH"
 
 # Request the server then pushes the file to cloud

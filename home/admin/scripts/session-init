@@ -5,12 +5,6 @@ setxkbmap gb
 xhost local:aidan
 
 MOUNTPOINT=/mnt/nas
-TARGET=server:/mnt/nas/main
-if ! mountpoint -q $MOUNTPOINT; then
-  sshfs -C -o follow_symlinks,allow_root $TARGET $MOUNTPOINT
-fi
-
-MOUNTPOINT=/mnt/nas2
 TARGET=anon@srv2:/mnt/nas
 if ! mountpoint -q $MOUNTPOINT; then
   sshfs -C -o follow_symlinks,allow_root $TARGET $MOUNTPOINT

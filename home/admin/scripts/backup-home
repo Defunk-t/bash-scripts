@@ -6,7 +6,6 @@ FULL_PATH="/mnt/nas/$OUTPUT_PATH"
 # Create encrypted, compressed tar and save to remote
   tar cvf - \
       --ignore-failed-read \
-      -X ~/backup_exclude.txt \
       --exclude /home/aidan/Shared \
       --exclude .angular \
       --exclude .cache \
@@ -16,11 +15,14 @@ FULL_PATH="/mnt/nas/$OUTPUT_PATH"
       --exclude .npm \
       --exclude cache \
       --exclude Cache \
-      --exlude node_modules \
+      --exclude node_modules \
       /home \
 | xz  -9 -T0 \
 | gpg -er D3C4963B -z0 -o - \
 | ssh anon@srv2 "cat > $FULL_PATH"
 
-# Request the server then pushes the file to cloud
+# Pause because server has ssh auth session timeout
+read -p "Press enter to begin upload"
+
+# Push backup to the cloud via server
 ssh -t admin@srv2 "sudo rclone -P copyto --config=/root/.config/rclone/rclone.conf $FULL_PATH proton:$OUTPUT_PATH"

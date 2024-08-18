@@ -1,10 +1,15 @@
 #!/bin/sh
 
-OUTPUT_PATH="Backups/$(date '+%F')\ PC\ Artix.txz.gpg"
+OUTPUT_PATH="Backups/$(date '+%F') PC Artix.txz.gpg"
 FULL_PATH="/mnt/nas/$OUTPUT_PATH"
 
+if ! mountpoint -q /mnt/nas; then
+  echo "Remote is not mounted"
+  exit 1
+fi
+
 # Create encrypted, compressed tar and save to remote
-  tar cvf - \
+sudo tar cvf - \
       --ignore-failed-read \
       --exclude /home/aidan/Shared \
       --exclude .angular \
@@ -18,8 +23,7 @@ FULL_PATH="/mnt/nas/$OUTPUT_PATH"
       --exclude node_modules \
       /home \
 | xz  -9 -T0 \
-| gpg -er D3C4963B -z0 -o - \
-| ssh anon@srv2 "cat > $FULL_PATH"
+| gpg -er D3C4963B -z0 > $FULL_PATH
 
 # Pause because server has ssh auth session timeout
 read -p "Press enter to begin upload"

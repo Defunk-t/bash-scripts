@@ -3,14 +3,18 @@
 # Script is ran manually after cd-ing into mounted
 # dir where .SeedVaultAndroidBackup/ can be found
 
-OUTPUT_PATH="Backups/$(date '+%F')\ Pixel6\ GSF.txz.gpg"
+OUTPUT_PATH="Backups/$(date '+%F') Pixel6 GSF.txz.gpg"
 FULL_PATH="/mnt/nas/$OUTPUT_PATH"
+
+if ! mountpoint -q /mnt/nas; then
+  echo "Remote is not mounted"
+  exit 1
+fi
 
 # Create encrypted, compressed tar and save to remote
   tar cvf .SeedVaultAndroidBackup \
 | xz  -9 -T0 \
-| gpg -er D3C4963B -z0 -o - \
-| ssh anon@srv2 "cat > $FULL_PATH"
+| gpg -er D3C4963B -z0 > $FULL_PATH
 
 # Request the server then pushes the file to cloud
 ssh -t admin@srv2 "sudo rclone -P copyto --config=/root/.config/rclone/rclone.conf $FULL_PATH proton:$OUTPUT_PATH"

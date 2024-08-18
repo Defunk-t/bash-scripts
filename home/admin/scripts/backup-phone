@@ -12,7 +12,7 @@ if ! mountpoint -q /mnt/nas; then
 fi
 
 # Create encrypted, compressed tar and save to remote
-  tar cvf .SeedVaultAndroidBackup \
+  tar cvf - .SeedVaultAndroidBackup \
 | xz  -9 -T0 \
 | gpg -er D3C4963B -z0 > $FULL_PATH
 

@@ -15,9 +15,16 @@ sudo tar cvf - \
       --exclude .angular \
       --exclude .cache \
       --exclude .cargo \
+      --exclude ".config/Code - OSS" \
+      --exclude ".config/discord" \
+      --exclude ".config/REAPER" \
       --exclude .electron-gyp \
       --exclude .gradle \
+      --exclude .java \
+      --exclude .local \
+      --exclude .mozilla \
       --exclude .npm \
+      --exclude .vscode-oss \
       --exclude cache \
       --exclude Cache \
       --exclude node_modules \

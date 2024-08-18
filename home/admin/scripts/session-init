@@ -7,11 +7,11 @@ xhost local:aidan
 MOUNTPOINT=/mnt/nas
 TARGET=anon@srv2:/mnt/nas
 if ! mountpoint -q $MOUNTPOINT; then
-  sshfs -C -o follow_symlinks,allow_root $TARGET $MOUNTPOINT
+  sshfs -C -o reconnect,follow_symlinks,allow_root $TARGET $MOUNTPOINT
 fi
 
 MOUNTPOINT=~/Shared
 TARGET=anon@srv2:/mnt/nas/Anon
 if ! mountpoint -q $MOUNTPOINT; then
-  sshfs -C -o follow_symlinks $TARGET $MOUNTPOINT
+  sshfs -C -o reconnect,follow_symlinks $TARGET $MOUNTPOINT
 fi

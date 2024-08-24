@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Clean the package manager
+paru -Sccd --noconfirm
+
+# Clean Docker
+docker system prune -f
+
+sudo rm -fr \
+  /home/*/.cache/paru \
+  /home/*/.local/share/Trash \
+  /home/*/.npm \
+  /home/*/.*_history \
+  /home/*/.lesshst \
+  /home/*/.viminfo

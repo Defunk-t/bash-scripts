@@ -36,4 +36,4 @@ sudo tar cvf - \
 read -p "Press enter to begin upload"
 
 # Push backup to the cloud via server
-ssh -t admin@srv2 "sudo rclone -P copyto --config=/root/.config/rclone/rclone.conf $FULL_PATH proton:$OUTPUT_PATH"
+ssh -t admin@srv2 "sudo rclone -P copyto --config=/root/.config/rclone/rclone.conf \"$FULL_PATH\" \"proton:$OUTPUT_PATH\""

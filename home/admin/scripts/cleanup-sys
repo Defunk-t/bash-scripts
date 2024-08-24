@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Clean the package manager
-paru -Scc
-
-# Clean Docker
-docker system prune -f
